@@ -70,11 +70,11 @@ async function createVersionInfo(file) {
         `export default {`,
         `    branch: {`,
         `        label: '${branch}',`,
-        `        link: 'https://github.com/manga-download/hakuneko/commits/${branch}',`,
+        `        link: 'https://github.com/subhajit-001/hakuneko/commits/${branch}',`,
         `    },`,
         `    revision: {`,
         `        label: '${revision.slice(0, 6)}',`,
-        `        link: 'https://github.com/manga-download/hakuneko/commits/${revision}',`,
+        `        link: 'https://github.com/subhajit-001/hakuneko/commits/${revision}',`,
         `    }`,
         `};`
     ].join('\n');
