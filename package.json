@@ -23,7 +23,7 @@
     "jest": "latest",
     "jest-junit": "latest",
     "jszip": "latest",
-    "polymer-build": "latest",
+    "polymer-build": "^3.1.4",
     "puppeteer-core": "latest",
     "rcedit": "latest",
     "win-7zip": "latest"
@@ -46,5 +46,8 @@
     "test:app": "jest --color --reporters=default --reporters=jest-junit --testPathPattern=/src/app",
     "test:web": "jest --color --reporters=default --reporters=jest-junit --testPathPattern=/src/web",
     "test:e2e": "jest --color --reporters=default --reporters=jest-junit --testPathPattern=/src/__tests__"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
   }
 }

@@ -23,10 +23,10 @@ module.exports = class Configuration {
     constructor(configuration) {
         let options = configuration || {};
         let applicationExecutableDirectory = path.dirname(electron.app.getPath('exe'));
-        this._applicationUpdateURL = options['applicationUpdateURL'] || 'https://manga-download.github.io/hakuneko/master/latest';
+        this._applicationUpdateURL = options['applicationUpdateURL'] || 'DISABLED';
         this._applicationStartupURL = options['applicationStartupURL'] || 'hakuneko://cache/index.html';
-        this._applicationCacheDirectory = options['applicationCacheDirectory'] || path.join(applicationExecutableDirectory, 'cache');
-        this._applicationUserDataDirectory = options['applicationUserDataDirectory'] || path.join(applicationExecutableDirectory, 'userdata');
+        this._applicationCacheDirectory = options['applicationCacheDirectory'] || 'D:\Projects\hakuneko\src\web';
+        this._applicationUserDataDirectory = options['applicationUserDataDirectory'] || 'C:\Users\user\AppData\Roaming\hakuneko-dev';
     }
 
     printInfo() {

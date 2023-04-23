@@ -332,7 +332,7 @@ class ElectronPackagerLinux extends ElectronPackager {
      *
      */
     async _bundleElectron() {
-        console.log('Bundle electron ...');
+        console.log('Bundle electron 1...');
         let folder = this._stagingExecutableDirectory;
         await this._downloadElectron(this._configuration.version, this._architecture.platform, folder);
         await fs.remove(path.join(folder, 'resources', 'default_app.asar'));
@@ -627,7 +627,7 @@ class ElectronPackagerWindows extends ElectronPackager {
      * @param {bool} portable
      */
     async _bundleElectron(portable) {
-        console.log('Bundle electron ...');
+        console.log('Bundle electron 3...');
         let folder = this._stagingExecutableDirectory;
         await this._downloadElectron(this._configuration.version, this._architecture.platform, folder);
         await fs.remove(path.join(folder, 'resources', 'default_app.asar'));
@@ -795,7 +795,7 @@ class ElectronPackagerDarwin extends ElectronPackager {
      *
      */
     async _bundleElectron() {
-        console.log('Bundle electron ...');
+        console.log('Bundle electron 2...');
         let folder = path.join(this._dirBuildRoot, 'Electron.app', 'Contents');
         await this._downloadElectron(this._configuration.version, this._architecture.platform, this._dirBuildRoot);
         await fs.remove(path.join(folder, 'Resources', 'default_app.asar'));
