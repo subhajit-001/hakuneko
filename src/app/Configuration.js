@@ -69,7 +69,7 @@ module.exports = class Configuration {
     }
 
     get applicationCacheDirectory() {
-        return this._absolute(this._applicationCacheDirectory);
+        return this.this._applicationCacheDirectory;
     }
 
     get applicationUserDataDirectory() {
