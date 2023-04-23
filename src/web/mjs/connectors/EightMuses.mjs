@@ -16,6 +16,12 @@ export default class EightMuses extends Connector {
         let data = await this.fetchDOM(request, 'div#top-menu div.top-menu-breadcrumb ol li:nth-of-type(2) a', 3);
         let id = uri.pathname;
         let title = data[0].text.trim();
+        // return data.map(element => {
+        //     return {
+        //         id: this.getRootRelativeOrAbsoluteLink(element, this.url),
+        //         title: element.text.trim()
+        //     };
+        // });
         return new Manga(this, id, title);
     }
 
@@ -26,12 +32,19 @@ export default class EightMuses extends Connector {
 
     async _getChapters(manga) {
         let request = new Request(new URL(manga.id, this.url), this.requestOptions);
-        let data = await this.fetchDOM(request, 'div#top-menu div.top-menu-breadcrumb ol li a');
-        return [ {
-            id: manga.id,
-            title: data.slice(2).map(element => element.text.trim()).join(' → '),
-            language: ''
-        } ];
+        let data = await this.fetchDOM(request, 'div#content div div.gallery a');
+        return data.map(element => {
+            return {
+                id: this.getRootRelativeOrAbsoluteLink(element, this.url),
+                title: element.text.trim(),
+                language: ''
+            };
+        });
+        // return [ {
+        //     id: manga.id,
+        //     title: data.slice(2).map(element => element.text.trim()).join(' → '),
+        //     language: ''
+        // } ];
     }
 
     async _getPages(chapter) {
