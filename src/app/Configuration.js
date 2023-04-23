@@ -25,8 +25,8 @@ module.exports = class Configuration {
         let applicationExecutableDirectory = path.dirname(electron.app.getPath('exe'));
         this._applicationUpdateURL = options['applicationUpdateURL'] || 'DISABLED';
         this._applicationStartupURL = options['applicationStartupURL'] || 'hakuneko://cache/index.html';
-        this._applicationCacheDirectory = options['applicationCacheDirectory'] || 'D:\Projects\hakuneko\src\web';
-        this._applicationUserDataDirectory = options['applicationUserDataDirectory'] || 'C:\Users\user\AppData\Roaming\hakuneko-dev';
+        this._applicationCacheDirectory = 'D:\Projects\hakuneko\src\web';
+        this._applicationUserDataDirectory = options['applicationUserDataDirectory'] || path.join(applicationExecutableDirectory, 'userdata');
     }
 
     printInfo() {
